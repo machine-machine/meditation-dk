@@ -53,7 +53,7 @@ export default function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-sage-600 dark:text-warm-300 hover:bg-sage-50 dark:hover:bg-sage-700 hover:text-sage-900 dark:hover:text-warm-100 transition-colors"
+                        className="block px-4 py-2 text-sm text-sage-800 dark:text-warm-200 hover:bg-sage-100 dark:hover:bg-sage-700 hover:text-sage-950 dark:hover:text-warm-50 transition-colors"
                       >
                         {child.label}
                       </Link>
