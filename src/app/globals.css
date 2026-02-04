@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sage-50: #f6f7f4;
+  --color-sage-100: #e8eae3;
+  --color-sage-200: #d1d5c8;
+  --color-sage-300: #b3baa3;
+  --color-sage-400: #949e7e;
+  --color-sage-500: #778262;
+  --color-sage-600: #5d674c;
+  --color-sage-700: #4a523d;
+  --color-sage-800: #3d4334;
+  --color-sage-900: #353a2e;
+  --color-sage-950: #1b1e17;
+
+  --color-teal-50: #f0fdfb;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+
+  --color-warm-50: #fdfcfb;
+  --color-warm-100: #f5f0eb;
+  --color-warm-200: #ece4da;
+  --color-warm-300: #ddd0c0;
+  --color-warm-400: #c9b69e;
+  --color-warm-500: #b09a7e;
+  --color-warm-600: #9a8268;
+  --color-warm-700: #7d6a55;
+  --color-warm-800: #665747;
+  --color-warm-900: #544a3d;
+
+  --font-serif: "Crimson Pro", "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-warm-50 text-sage-900 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  .dark body {
+    @apply bg-sage-950 text-warm-200;
+  }
+}
+
+/* Article content styling */
+.article-content {
+  @apply max-w-[65ch] mx-auto;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.article-content h1 {
+  @apply text-3xl md:text-4xl font-bold mt-12 mb-6 text-sage-800;
+  font-family: var(--font-serif);
+  line-height: 1.3;
+}
+
+.dark .article-content h1 {
+  @apply text-warm-100;
+}
+
+.article-content h2 {
+  @apply text-2xl md:text-3xl font-bold mt-10 mb-5 text-sage-700;
+  font-family: var(--font-serif);
+  line-height: 1.3;
+}
+
+.dark .article-content h2 {
+  @apply text-warm-200;
+}
+
+.article-content h3 {
+  @apply text-xl md:text-2xl font-semibold mt-8 mb-4 text-sage-700;
+  font-family: var(--font-serif);
+}
+
+.dark .article-content h3 {
+  @apply text-warm-300;
+}
+
+.article-content h4 {
+  @apply text-lg md:text-xl font-semibold mt-6 mb-3 text-sage-600;
+  font-family: var(--font-serif);
+}
+
+.article-content p {
+  @apply mb-6 text-sage-800;
+}
+
+.dark .article-content p {
+  @apply text-warm-200;
+}
+
+.article-content a {
+  @apply text-teal-700 underline decoration-teal-300 underline-offset-2 transition-colors duration-200;
+}
+
+.article-content a:hover {
+  @apply text-teal-500 decoration-teal-500;
+}
+
+.dark .article-content a {
+  @apply text-teal-400 decoration-teal-700;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-sage-300 pl-6 py-2 my-8 italic text-sage-600;
+  font-family: var(--font-serif);
+}
+
+.dark .article-content blockquote {
+  @apply border-sage-600 text-warm-300;
+}
+
+.article-content img {
+  @apply rounded-lg my-8 mx-auto max-w-full h-auto shadow-sm;
+}
+
+.article-content ul {
+  @apply list-disc pl-6 mb-6 space-y-2;
+}
+
+.article-content ol {
+  @apply list-decimal pl-6 mb-6 space-y-2;
+}
+
+.article-content strong {
+  @apply font-bold text-sage-900;
+}
+
+.dark .article-content strong {
+  @apply text-warm-100;
+}
+
+.article-content em {
+  @apply italic;
+}
+
+.article-content hr {
+  @apply my-12 border-sage-200;
+}
+
+.dark .article-content hr {
+  @apply border-sage-700;
+}
+
+/* YouTube embed responsive container */
+.youtube-embed {
+  @apply relative w-full my-8 rounded-lg overflow-hidden shadow-md;
+  padding-bottom: 56.25%;
+}
+
+.youtube-embed iframe {
+  @apply absolute inset-0 w-full h-full;
+}
+
+/* Quote styling for spiritual quotes */
+.spiritual-quote {
+  @apply relative my-12 py-8 px-8 text-center italic;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+}
+
+.spiritual-quote::before {
+  content: "\201C";
+  @apply absolute top-0 left-4 text-6xl text-sage-200 leading-none;
+  font-family: var(--font-serif);
+}
+
+.dark .spiritual-quote::before {
+  @apply text-sage-700;
+}
+
+/* Gentle transitions */
+.page-transition {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Audio player */
+.audio-player {
+  @apply bg-sage-100 rounded-xl p-6 my-8;
+}
+
+.dark .audio-player {
+  @apply bg-sage-800;
+}
+
+/* Nav dropdown */
+.nav-dropdown {
+  @apply absolute top-full left-0 mt-1 bg-white rounded-lg shadow-xl border border-sage-100 py-2 min-w-64 opacity-0 invisible transition-all duration-200 z-50;
+}
+
+.dark .nav-dropdown {
+  @apply bg-sage-800 border-sage-700;
+}
+
+.nav-item:hover .nav-dropdown {
+  @apply opacity-100 visible;
+}
+
+/* Section cards on homepage */
+.section-card {
+  @apply relative p-6 rounded-xl transition-all duration-300 cursor-pointer;
+  @apply bg-white/60 backdrop-blur-sm border border-sage-100;
+  @apply hover:shadow-lg hover:border-sage-200 hover:-translate-y-1;
+}
+
+.dark .section-card {
+  @apply bg-sage-800/60 border-sage-700;
+  @apply hover:border-sage-600;
+}
