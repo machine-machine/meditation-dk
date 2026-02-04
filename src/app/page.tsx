@@ -25,51 +25,64 @@ export default function Home() {
   return (
     <div className="page-transition">
       {/* Hero */}
-      <section className="relative py-24 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-sage-50 via-warm-50 to-teal-50/30 dark:from-sage-950 dark:via-sage-900 dark:to-teal-950/30" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1
-            className="text-5xl md:text-7xl font-bold text-sage-900 dark:text-warm-50 mb-8 leading-tight"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            meditation<span className="text-teal-600">.dk</span>
-          </h1>
-
+      <section className="relative overflow-hidden bg-black">
+        {/* Hero image with fade */}
+        <div className="relative w-full" style={{ minHeight: "85vh" }}>
           <div
-            className="max-w-2xl mx-auto mb-12"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            <p className="text-xl md:text-2xl text-sage-600 dark:text-warm-300 italic leading-relaxed mb-6">
-              &ldquo;What is taken in by contemplation
-              <br />
-              must be given out in love&rdquo;
-            </p>
-            <p className="text-sm text-sage-500 dark:text-warm-500">
-              — Meister Eckhart
-            </p>
-          </div>
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/images/bobo.jpg')" }}
+          />
+          {/* Fade to black at bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          {/* Subtle vignette on sides */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
 
-          <p className="text-lg text-sage-700 dark:text-warm-200 max-w-2xl mx-auto leading-relaxed mb-4">
-            A personal exploration of consciousness, meditation, and the inner
-            life — from nearly 50 years of continuous spiritual practice.
-          </p>
-          <p className="text-base text-sage-500 dark:text-warm-400 max-w-xl mx-auto">
-            By Gunnar Mühlmann
-          </p>
+          {/* Content overlay at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 pb-16 md:pb-24">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1
+                className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-lg"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                meditation<span className="text-teal-400">.dk</span>
+              </h1>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/what-is-meditation"
-              className="inline-flex items-center justify-center px-8 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-medium"
-            >
-              Begin Reading
-            </Link>
-            <Link
-              href="/consciousness/consciousness-and-evolution"
-              className="inline-flex items-center justify-center px-8 py-3 bg-white dark:bg-sage-800 text-sage-700 dark:text-warm-200 rounded-lg hover:bg-sage-50 dark:hover:bg-sage-700 transition-colors font-medium border border-sage-200 dark:border-sage-700"
-            >
-              Start with Consciousness
-            </Link>
+              <div
+                className="max-w-2xl mx-auto mb-10"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                <p className="text-xl md:text-2xl text-warm-200 italic leading-relaxed mb-4">
+                  &ldquo;What is taken in by contemplation
+                  <br />
+                  must be given out in love&rdquo;
+                </p>
+                <p className="text-sm text-warm-400">— Meister Eckhart</p>
+              </div>
+
+              <p className="text-lg text-warm-200 max-w-2xl mx-auto leading-relaxed mb-3">
+                A personal exploration of consciousness, meditation, and the
+                inner life — from nearly 50 years of continuous spiritual
+                practice.
+              </p>
+              <p className="text-base text-warm-400 max-w-xl mx-auto">
+                By Gunnar Mühlmann
+              </p>
+
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/what-is-meditation"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-medium"
+                >
+                  Begin Reading
+                </Link>
+                <Link
+                  href="/consciousness/consciousness-and-evolution"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-white/10 text-warm-100 rounded-lg hover:bg-white/20 transition-colors font-medium border border-white/20"
+                >
+                  Start with Consciousness
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
